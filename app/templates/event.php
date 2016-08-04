@@ -1,3 +1,10 @@
+<?php
+$this->layout('master', [
+    'title'=>'Headbangers NZ | Events',
+    'desc'=>'wellington based Hard Rock and Heavy Metal blog, vith photos of local band and up coming events.'
+  ]);
+?>
+
 <!-- banner
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Headbangers NZ | </title>
-
+    <title><?= $title?> </title>
+    <meta name="description" content="<?=$desc?>">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/carousel.css" rel="stylesheet">
@@ -37,10 +37,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul id="nav-ul" class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="event.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class=""><a href="index.php?page=home">Home</a></li>
+                <li class=""><a href="index.php?page=gallery">Gallery</a></li>
+                <li class=""><a href="index.php?page=event">Events</a></li>
+                <li class=""><a href="index.php?page=contact">Contact</a></li>
               </ul>
 
                 <form class="navbar-form navbar-right" role="search">
@@ -77,7 +77,7 @@
                           <ul>
                             <li><a href="">Forgotten password</a></li>
 
-                            <li><a href="sign-up.html">Sign up</a></li>
+                            <li><a href="index.php?page=sign-up">Sign up</a></li>
                           </ul>
                         </div> 
 
@@ -85,7 +85,7 @@
                       </form>
                     
                   </li>
-                  <li><a href="account.html">Account</a></li>
+                  <li><a href="index.php?page=account">Account</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Sign out</a></li>                
                 </ul>
@@ -95,6 +95,8 @@
         </nav>
       </div>
     </div>
+
+    <?php echo $this->section('content') ?> 
 
           <!-- FOOTER -->
       <footer>

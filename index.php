@@ -3,8 +3,6 @@
 //Make everything in the vendor folder avalavle to use
 require 'vendor/autoload.php';
 
-$plates = new League\Plates\Engine('app/templates');
-
 // Load the appropriate page
 
 //has the user requested a page?
@@ -20,59 +18,56 @@ if( isset($_GET['page']) ){
 switch($page) {
 // 	//Home Page
 	case 'home':
-		echo $plates->render('home');
-		// require 'app/controllers/HomeController.php';
-		// $controller = new HomeController($dbc);
+		require 'app/controllers/HomeController.php';
+		$controller = new HomeController();
 	break;
 
 	//Gallery page
 	case 'gallery':
 		echo $plates->render('gallery');
 		// require 'app/controllers/gallery.php';
-		// $controller = new GalleryController($dbc);
+		// $controller = new GalleryController();
 	break;
 
 	//Artist page
 	case 'artist':
 		echo $plates->render('artist');
 		// require 'app/controllers/ArtistController.php';
-		// $controller = new ArtistController($dbc);
+		// $controller = new ArtistController();
 	break;
 
 	//Article page
 	case 'article':
 		echo $plates->render('article');
 		// require 'app/controllers/ArticleController.php';
-		// $controller = new ArticleController($dbc);
+		// $controller = new ArticleController();
 	break;
 
 	//Event page
 	case 'event':
 		echo $plates->render('event');
 		// require 'app/controllers/EventController.php';
-		// $controller = new EventController($dbc);
+		// $controller = new EventController();
 	break;
 
 	//Contact page
 	case 'contact':
 		echo $plates->render('contact');
 		// require 'app/controllers/ContactController.php';
-		// $controller = new ContactController($dbc);
+		// $controller = new ContactController();
 	break;
 
 	//Sign up page
-	case 'Sign-up':
-		echo $plates->render('Sign-up
-	');
-		// require 'app/controllers/ContactController.php';
-		// $controller = new ContactController($dbc);
+	case 'sign-up':		
+		require 'app/controllers/SignUpController.php';
+		$controller = new SignUpController();
 	break;
 
 	//Account page
 	case 'account':
 		echo $plates->render('account');
-		// require 'app/controllers/ContactController.php';
-		// $controller = new ContactController($dbc);
+		// require 'app/controllers/AccountController.php';
+		// $controller = new AccountController();
 	break;
 
 	//404 page
@@ -82,4 +77,4 @@ switch($page) {
 	break;	
 } 
 
-// $controller->buildHTML();
+$controller->buildHTML();
