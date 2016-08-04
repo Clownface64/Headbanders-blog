@@ -1,0 +1,553 @@
+body{ 
+	padding: 0;
+	margin: 0 ;
+	font-family: 'Raleway', sans-serif;
+}
+p {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+footer {
+	width: 1140px;
+	margin: 0 auto;
+	bottom: 20px;
+	border-top: 1px solid #eee;
+}
+
+h1 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+}
+
+.footer-account{
+	position: fixed;
+	margin: 0 390px;
+	bottom: 20px;
+}
+
+.color-one {
+	background-color: pink;
+}
+
+.color-two {
+	background-color: red;
+}
+
+.nav-tab {
+	width: 568px;
+}
+/*===========nav==========*/
+.navbar-brand {
+	font-family: 'Trade Winds', cursive;
+}
+#navbar ul li a {
+	font-family: 'Playfair Display', serif;
+}
+
+#dropdown {
+	float: right;
+	background-color: #222;
+	border: 1px solid #222;
+	height: 51px; 
+	padding: 10px;
+}
+
+.dropdown-toggle {
+	color: #9d9d9d;
+	font-size: 17px;
+	
+}
+.dropdown a {
+	color: #9d9d9d;
+}
+.dropdown-toggle:hover {
+	color: white;
+}
+
+#dropdown:hover{
+	background-color: #080808;
+	border: 1px solid #080808;
+}
+
+#dropdown ul {
+	width: 298px;
+	background-color: #222;
+}
+
+#dropdown ul li {
+	/*width: 100px;*/
+	margin: 0;
+}
+
+#dropdown ul li a {
+	color: #9d9d9d;
+	font-family: 'Raleway', sans-serif;
+}
+
+#dropdown ul li a:hover {
+	background-color: #080808;
+	color: white;
+}
+
+.login-input input,
+.login-input label {
+	display: inline-block;
+}
+
+.login-input label {
+	color: #9d9d9d;
+}
+
+.form-control {
+	width: 181px;
+	margin-right: 0;
+	display: inline-block;
+}
+
+.forgotten-dropdown {
+	width: 181px;
+	background-color: red;
+
+}
+
+.checkbox label {
+	color: #9d9d9d;
+}
+
+.forgotten-dropdown ul{
+	width: 181px;
+	padding: 0;
+	margin: 2px 0;
+}
+
+.forgotten-dropdown ul li {
+	width: 100%;	
+}
+.button{
+	margin: 0;
+}
+
+.forgotten-dropdown ul li a {
+	font-family: 'Raleway', sans-serif;
+}
+
+.forgotten-dropdown ul li a:hover {
+	background-color: #222;
+	color: #9d9d9d;
+}
+.submit-log-in {
+	background-color: #222;
+	border: none;
+	border-radius: 3px;
+	margin-top: 10px;
+	margin-left: 0;
+	color: #9d9d9d; 
+}
+
+.submit-log-in:hover {
+	background-color: #080808;
+}
+/*============carousel=============*/
+.btn-carousel {
+	background-color: #222;
+	border: none;
+}
+
+.btn-carousel:hover {
+	background: #000000;
+	background: -moz-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, #000000), color-stop(100%, #0a0a0a));
+	background: -webkit-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -o-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -ms-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0a0a0a', GradientType=1 );
+	border: none;
+}
+.heading-two {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	color: #222;
+	text-decoration: none;
+}
+
+.btn-read {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	color: white;
+	background-color: #222;
+	border: none;
+}
+
+.btn-read:hover {
+	background: #000000;
+	background: -moz-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, #000000), color-stop(100%, #0a0a0a));
+	background: -webkit-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -o-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: -ms-linear-gradient(-45deg, #000000 0%, #0a0a0a 100%);
+	background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0a0a0a', GradientType=1 );
+	border: none;
+}
+
+.lead {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+.btn-read
+
+#banner img {
+	width: 100%;
+	height: 500px;
+	margin-bottom: 60px;
+}
+.gallery {
+	margin-bottom: 60px;
+}
+
+.img {
+	border: 1px solid #ccc;
+}
+
+#gallery {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+#gallery img {
+	float: left;
+	width: 24%;
+	margin: .5%;
+	
+}
+
+.artists {
+	margin-bottom: 60px
+}
+
+/*==========home===========*/
+.byline {
+	display: inline;
+	margin: 0 20px 5px 0;
+}
+
+.featurette-heading {
+	color: #333;
+}
+
+.article-anchor {
+	color: #333;
+}
+
+.article-anchor:hover {
+	
+	color: #333;
+
+}
+
+/*============Calender==========*/
+
+#calender {
+	width: 1170px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+
+ul {list-style-type: none;}
+
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+/*========sign up==========*/
+.input-sign-up {
+	border: 1px solid #ccc;
+	width: 70%;
+	margin-right: 10px;
+}
+#profile {
+	padding: 15px;
+}
+
+.submit-sign-up { 
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	background-color: white;
+}
+
+.form-group label {
+	width: 80px;
+}
+#profile-pic-input {
+	width: 150px;
+}
+.login {
+	float: none;
+	padding: 15px;
+}
+.sign-up {
+	margin: 100px auto;
+	width: 500px;
+}
+ 
+
+.band-label {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.member-label {
+	/*width: 538px;*/
+}
+
+.band-input {
+	margin-bottom: 10px;
+}
+
+.textarea {
+	width: 400px;
+}
+
+
+/*======contact page=========*/
+
+#contact-form {
+	width: 500px;
+	margin: 120px auto;
+	padding: 20px;
+}
+
+.input {
+	width: 400px;
+	margin: 5px auto; 
+	border: none;
+}
+
+.input label {
+	width: 70px;
+	display: block;
+}
+
+.input input {
+	width: 200px;
+}
+
+.input textarea {
+	height: 200px;
+	width: 300px;
+}
+
+.contact-button{
+	margin-left: 30px;
+}
+
+/*=========article===========*/
+.article {
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.article hr {
+	margin: 60px;
+}
+
+.edit-controls {
+	margin: 0 5px;
+}
+
+.edit-delete {
+	margin: 10px 10px 10px 0;
+}
+
+.article-body {
+	width: 900px;
+}
+
+article {
+	margin: 0 auto;
+	width: 900px;
+}
+
+/*==========search=========*/
+.btn-search {	
+	color: #9d9d9d;
+	background-color: #222;
+	border: none;
+	height: 34px;
+}
+
+.btn-search:hover {
+	color: white;
+	background-color: #080808;
+}
+
+/*=====artist gallery==========*/
+.band-info li{
+	display: inline-block;
+	width: 23%;
+	margin: 0 auto;
+}
+
+.band-info ul{
+	padding: 0;
+}
+
+#band-info {
+	margin-bottom: 60px;
+}
+
+/*===========account===========*/
+.account {
+	width: 1140px;
+	margin: 100px auto;
+}
+
+.pills {
+	border-right: 1px solid #333;
+	width: 175px;
+	height: 100%;
+	display: inline-block;
+}
+
+.pills ul li a {
+	width: 100%;
+	border-radius: 4px 0 0 4px;
+	color: #222;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400; 
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+ 	color: #fff;
+ 	background-color: #222;
+ 	font-weight: 500;
+}
+
+#add-band,
+#upload-photo {
+	width: 950px;
+	margin-right: 0;	
+}
+
+.tab-content{
+	width: 950px;
+	margin: 0;
+	right: 0;
+	float: right;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
