@@ -1,10 +1,13 @@
 <?php
 
-class HomeController {
+class HomeController extends MasterController{
 
 	// Properties
 
 	//Constructor
+	public function __construct($dbc) {
+		$this->dbc = $dbc;
+	}
 
 	//Methods (functions)
 	
