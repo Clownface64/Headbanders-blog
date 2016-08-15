@@ -12,6 +12,9 @@ class SignUpController extends MasterController {
 	//Constructor
 	public function __construct($dbc) {
 
+		//Run the parent constructor
+		parent::__construct();
+
 		//save the database connection for later
 		$this->dbc = $dbc;
 

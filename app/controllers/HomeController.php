@@ -6,6 +6,10 @@ class HomeController extends MasterController{
 
 	//Constructor
 	public function __construct($dbc) {
+		
+		//Run the parent constructor
+		parent::__construct();
+
 		$this->dbc = $dbc;
 	}
 
@@ -13,9 +17,6 @@ class HomeController extends MasterController{
 	
 	public function buildHTML() {
 
-		//Instantiate (create and instace) of plates library
-		$plates = new League\Plates\Engine('app/templates');
-
-		echo $plates->render('home');
+		$this->plates->render('home');
 	}
 }
