@@ -66,7 +66,7 @@ switch($page) {
 	case 'account':
 		
 		require 'app/controllers/AccountController.php';
-		$controller = new AccountController();
+		$controller = new AccountController($dbc);
 	break;
 
 	//404 page

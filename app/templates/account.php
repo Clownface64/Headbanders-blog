@@ -111,6 +111,7 @@ $this->layout('master', [
       </div>
 
       <div role="tabpanel" class="tab-pane" id="upload-photo">
+      <h1>Upload a photo</h1>
         <form>
           <div class="form-group">
             <label for="name">Name:</label>
