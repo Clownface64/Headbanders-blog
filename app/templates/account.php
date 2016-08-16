@@ -1,3 +1,9 @@
+<?php
+$this->layout('master', [
+    'title'=>'Headbangers NZ | Account',
+    'desc'=>'wellington based Hard Rock and Heavy Metal blog, vith photos of local band and up coming events.'
+  ]);
+?>
 <div class="account">
   <div>
     <div class="pills">

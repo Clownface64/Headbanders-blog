@@ -38,9 +38,8 @@ switch($page) {
 
 	//Article page
 	case 'article':
-		echo $plates->render('article');
-		// require 'app/controllers/ArticleController.php';
-		// $controller = new ArticleController($dbc);
+		require 'app/controllers/ArticleController.php';
+		$controller = new ArticleController($dbc);
 	break;
 
 	//Event page
@@ -65,9 +64,9 @@ switch($page) {
 
 	//Account page
 	case 'account':
-		echo $plates->render('account');
-		// require 'app/controllers/AccountController.php';
-		// $controller = new AccountController();
+		
+		require 'app/controllers/AccountController.php';
+		$controller = new AccountController();
 	break;
 
 	//404 page

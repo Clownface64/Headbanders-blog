@@ -17,4 +17,8 @@ abstract class MasterController {
 	//Force all children to have a build html function
 	abstract public function buildHTML();
 
+	protected function mostViewdPosts() {
+		
+	}
+
 }

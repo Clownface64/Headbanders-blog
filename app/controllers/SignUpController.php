@@ -39,7 +39,7 @@ class SignUpController extends MasterController {
 	public function buildHTML() {
 
 		//Instantiate (create and instace) of plates library
-		$plates = new League\Plates\Engine('app/templates');
+	
 
 		//prepare a container for data 
 		$data = [];
@@ -61,7 +61,7 @@ class SignUpController extends MasterController {
 			$data['passwordMessage'] = $this->passwordMessage; 
 		}
 
-		echo $plates->render('sign-up', $data);
+		echo $this->plates->render('sign-up', $data);
 	}
 
 	private function validateSignUpForm() {
