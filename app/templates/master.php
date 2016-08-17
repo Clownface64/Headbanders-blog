@@ -21,6 +21,14 @@
     <![endif]-->
   </head>
   <body>
+
+  <?php if(isset($_SESSION['id'])){
+    var_dump("you are Logged in as ".$_SESSION['id']);
+    } else{
+      var_dump("you are logged Out");
+    } 
+  ?>
+    
     <div class="navbar-wrapper">
       <div class="container">
 

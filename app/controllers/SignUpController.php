@@ -8,6 +8,7 @@ class SignUpController extends MasterController {
 	private $firstNameMessage;
 	private $lastNameMessage;
 	
+	
 
 	//Constructor
 	public function __construct($dbc) {
