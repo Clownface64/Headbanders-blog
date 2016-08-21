@@ -136,6 +136,8 @@ class SignUpController extends MasterController {
 			//log the user in
 			$_SESSION['id'] = $this->dbc->insert_id;
 
+			$_SESSION['firstName'] = $filteredFirstName;
+
 			//Redirect the user to home page
 			header('Location: index.php?page=home');
 

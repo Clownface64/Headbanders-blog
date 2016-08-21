@@ -18,6 +18,15 @@ abstract class MasterController {
 	//Force all children to have a build html function
 	abstract public function buildHTML();
 
+	public function mustBeLoggedIn() {
+		//If you are not loged in
+		if( !isset($_SESSION['id']) ) {
+			
+			 //redirect use to login page
+			header('location: index.php?page=home');
+		}
+	}
+
 	protected function mostViewdPosts() {
 		
 	}

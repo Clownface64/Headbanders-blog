@@ -69,6 +69,16 @@ switch($page) {
 		$controller = new AccountController($dbc);
 	break;
 
+	case 'sign-out':
+		unset($_SESSION['id']);
+		header('Location: index.php');
+	break;
+
+	case 'sign-in':
+		require 'app/controllers/SignInController.php';
+		$controller = new SignInController($dbc);
+	break;
+
 	//404 page
 	default:
 		// require 'app/controllers/Error404Controller.php';

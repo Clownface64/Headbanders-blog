@@ -66,15 +66,22 @@
                 </a>
                 <ul class="dropdown-menu">                  
                   <li>                    
-                      <form class="login col-lg-12" action="" method="post">
+                      <form class="login col-lg-12" action="index.php?page=sign-in" method="post">
                         <div class="form-group login-input">
                           <label for="email">Email:</label>
-                          <input class="form-control " type="text" name="email" value="">
+                          <input class="form-control " type="text" name="email" value="<?= isset($_POST['sign-in']) ? $_POST['email'] : '' ?>">
+                          <?php if(isset($emailMessage)): ?>
+                            <p><?= $emailMessage ?></p>
+                          <?php endif ?>
+
                         </div>
 
                         <div class="form-group login-input">
                           <label for="password">Password:</label>
-                          <input class="form-control " type="text" name="password" value="">
+                          <input class="form-control " type="password" name="password" value="<?= isset($_POST['sign-in']) ? $_POST['password'] : '' ?>">
+                          <?php if(isset($passwordMessage)): ?>
+                            <p><?= $passwordMessage ?></p>
+                          <?php endif ?>
                         </div>
                     
                         <div class="checkbox">
@@ -88,14 +95,16 @@
                             <li><a href="index.php?page=sign-up">Sign up</a></li>
                           </ul>
                         </div> 
-
-                        <input class="button submit-log-in" type="submit" name="log-in" value="Login">  
+                        <?php if(isset($signInMessage)): ?>
+                          <p><?= $signInMessage ?></p>
+                        <?php endif ?>
+                        <input class="button submit-log-in" type="submit" name="sign-in" value="Sign in">  
                       </form>
                     
                   </li>
                   <li><a href="index.php?page=account">Account</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="#">Sign out</a></li>                
+                  <li><a href="index.php?page=sign-out">Sign out</a></li>                
                 </ul>
               </div>                 
             </div>

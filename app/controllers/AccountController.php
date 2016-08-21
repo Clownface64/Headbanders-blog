@@ -8,18 +8,14 @@ class AccountController extends MasterController {
 	private $passwordMessage;
 	private $successMessage;
 
+
 	public function __construct($dbc) {
 
 		parent::__construct();
 
 		$this->dbc = $dbc;
 	
-		//If you are not loged in
-			if( !isset($_SESSION['id']) ) {
-				
-				 //redirect use to login page
-				header('location: index.php?page=home');
-			}
+		$this->mustBeLoggedIn();
 
 		$this->getUserData();
 
@@ -39,6 +35,8 @@ class AccountController extends MasterController {
 
 	}
 
+	
+
 
 	private function getUserData(){
 		$sql = "SELECT first_name, last_name, email, password
@@ -56,19 +54,19 @@ class AccountController extends MasterController {
 		$totalErrors = 0;
 
 		//Valadate the first name
-		if ( strlen($_POST['first-name']) > 25 ) {
+		if ( strlen($_POST['first-name']) > 100 ) {
 			$this->data['firstNameMessage'] = '<p>Must be at most 100 characters.</p>';
 			$totalErrors++;
 		}
 
 		//Valadate the last name
-		if ( strlen($_POST['last-name']) > 25 ) {
+		if ( strlen($_POST['last-name']) > 100 ) {
 			$this->data['lastNameMessage'] = '<p>Must be at most 100 characters.</p>';
 			$totalErrors++;
 		}
 
 		//Valadate the email
-		if ( strlen($_POST['email']) > 50 ) {
+		if ( strlen($_POST['email']) > 100 ) {
 			$this->data['emailMessage'] = '<p>Must be at most 100 characters.</p>';
 			$totalErrors++;
 		}
@@ -76,6 +74,12 @@ class AccountController extends MasterController {
 		//Valadate the password		
 		if ( strlen($_POST['password']) < 8 ) {
 			$this->data['passwordMessage'] = '<p>Must be at lest 8 characters.</p>';
+			$totalErrors++;
+		}
+
+		//Valadate the password		
+		if ( strlen($_POST['password']) > 60 ) {
+			$this->data['passwordMessage'] = '<p>Must be at most 60 characters.</p>';
 			$totalErrors++;
 		}
 
