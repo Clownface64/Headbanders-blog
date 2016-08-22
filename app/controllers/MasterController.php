@@ -27,6 +27,15 @@ abstract class MasterController {
 		}
 	}
 
+	public function mustBeLoggedOut() {
+		//If you are not loged in
+		if( isset($_SESSION['id']) ) {
+			
+			 //redirect use to login page
+			header('location: index.php?page=home');
+		}
+	}
+
 	protected function mostViewdPosts() {
 		
 	}

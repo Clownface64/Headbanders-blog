@@ -12,7 +12,7 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic|Trade+Winds|Raleway:400,100,100italic,200,200italic,300italic,300,400italic,500,500italic,600,600italic,700,700italic,800italic,800,900,900italic' rel='stylesheet' type='text/css'>
-
+    <script src="js/ckeditor/ckeditor.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,44 +64,8 @@
               <div id="dropdown" class="dropdown">
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu">                  
-                  <li>                    
-                      <form class="login col-lg-12" action="index.php?page=sign-in" method="post">
-                        <div class="form-group login-input">
-                          <label for="email">Email:</label>
-                          <input class="form-control " type="text" name="email" value="<?= isset($_POST['sign-in']) ? $_POST['email'] : '' ?>">
-                          <?php if(isset($emailMessage)): ?>
-                            <p><?= $emailMessage ?></p>
-                          <?php endif ?>
-
-                        </div>
-
-                        <div class="form-group login-input">
-                          <label for="password">Password:</label>
-                          <input class="form-control " type="password" name="password" value="<?= isset($_POST['sign-in']) ? $_POST['password'] : '' ?>">
-                          <?php if(isset($passwordMessage)): ?>
-                            <p><?= $passwordMessage ?></p>
-                          <?php endif ?>
-                        </div>
-                    
-                        <div class="checkbox">
-                          <label><input type="checkbox"> Remember me</label>
-                        </div>
-
-                        <div class="forgotten-dropdown">
-                          <ul>
-                            <li><a href="">Forgotten password</a></li>
-
-                            <li><a href="index.php?page=sign-up">Sign up</a></li>
-                          </ul>
-                        </div> 
-                        <?php if(isset($signInMessage)): ?>
-                          <p><?= $signInMessage ?></p>
-                        <?php endif ?>
-                        <input class="button submit-log-in" type="submit" name="sign-in" value="Sign in">  
-                      </form>
-                    
-                  </li>
+                <ul class="dropdown-menu">
+                  <li><a href="index.php?page=sign-in">Sign in</a></li>                                
                   <li><a href="index.php?page=account">Account</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="index.php?page=sign-out">Sign out</a></li>                
@@ -137,6 +101,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
 
   </body>
 </html>

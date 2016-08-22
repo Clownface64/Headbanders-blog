@@ -45,8 +45,8 @@ switch($page) {
 	//Event page
 	case 'event':
 		echo $plates->render('event');
-		// require 'app/controllers/EventController.php';
-		// $controller = new EventController($dbc);
+		require 'app/controllers/EventController.php';
+		$controller = new EventController($dbc);
 	break;
 
 	//Contact page

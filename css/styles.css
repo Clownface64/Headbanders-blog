@@ -106,7 +106,7 @@ h1 {
 
 .forgotten-dropdown {
 	width: 181px;
-	background-color: red;
+	/*background-color: red;*/
 
 }
 
@@ -511,6 +511,11 @@ article {
 	content: '';
 	display: block;
 	clear: both;
+}
+#login {
+	width:500px;
+	padding-top: 100px;
+	margin: 0 auto;
 }
 
 

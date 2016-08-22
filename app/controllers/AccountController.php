@@ -2,13 +2,6 @@
 
 class AccountController extends MasterController {
 
-	private $firstNameMessage;
-	private $lastNameMessage;
-	private $emailMessage;
-	private $passwordMessage;
-	private $successMessage;
-
-
 	public function __construct($dbc) {
 
 		parent::__construct();
@@ -23,28 +16,24 @@ class AccountController extends MasterController {
 			if( isset($_POST['changes']) ) {
 				$this->processNewUserDetails();
 			}
-	}
 
-	
+			//Did an article get posted
+			if( isset($_POST['article-submit']) ){
+				$this->processNewArticle();
+			}
+	}	
 
 	public function buildHTML() {
-
-
 		
 		echo $this->plates->render('account', $this->data);
 
 	}
-
-	
-
 
 	private function getUserData(){
 		$sql = "SELECT first_name, last_name, email, password
 		FROM users";
 
 	 	$result = $this->dbc->query($sql);
-
-		
 
 	}
 
@@ -72,20 +61,16 @@ class AccountController extends MasterController {
 		}
 		
 		//Valadate the password		
-		if ( strlen($_POST['password']) < 8 ) {
+		if ( strlen($_POST['password']) > 8 ) {
 			$this->data['passwordMessage'] = '<p>Must be at lest 8 characters.</p>';
 			$totalErrors++;
 		}
 
-		//Valadate the password		
-		if ( strlen($_POST['password']) > 60 ) {
-			$this->data['passwordMessage'] = '<p>Must be at most 60 characters.</p>';
-			$totalErrors++;
-		}
+		
 
 		if ( $totalErrors == 0 ) {
 
-			$this->successMessage = '<p>Your details have been successfully updated.</p>';
+			$this->data['successMessage'] = '<p>Your details have been successfully updated.</p>';
 			//Form Validation passed
 
 			//Time to update the database
@@ -96,11 +81,18 @@ class AccountController extends MasterController {
 			$sql = "UPDATE users
 					SET first_name = '$firstName',
 						last_name = '$lastName'
-					WHERE id = $userID  ";
+					WHERE user_id = $userID  ";
 			// Run the query
 			$this->dbc->query( $sql );
 		}
 	}
+
+	private function processNewArticle() {
+		echo'<pre>';
+		print_r($_POST);
+		die();
+	}
+
 }
 
 

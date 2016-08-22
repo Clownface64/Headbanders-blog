@@ -21,6 +21,10 @@ $this->layout('master', [
         <li role="presentation">
           <a href="#upload-photo" aria-controls="upload-photo" role="tab" data-toggle="tab">Upload photos</a>
       </li>
+
+      <li role="presentation">
+          <a href="#post-article" aria-controls="post-article" role="tab" data-toggle="tab">Post articles</a>
+      </li>
     </ul>
     </div>
   <!-- Tab panes -->
@@ -70,58 +74,23 @@ $this->layout('master', [
       <div role="tabpanel" class="tab-pane clearfix" id="add-band">        
                 <form id="profile" role="form" action="" method="post">                      
                   <div class="form-group">
-                    <h1><input class="input-modal" type="text" name="band-name" placeholder="Bands name:" value=""></h1>       
+                    <h1><input class="input-modal" type="text" name="band-name" placeholder="Band name:" value=""></h1>       
                   </div>
-
-                  <div class="form-group info-label">
-                    <label  for="bio">Bio:</label>
-                    <textarea class="input-modal textarea" type="text" name="first-name" value=""></textarea>
-                  </div>
-        
+                      
                   <div class="form-group info-label">
                     <label  for="genre">Genre:</label>
                     <input class="input-modal" type="text" name="last-name" value="">            
                   </div>
         
-                  <div class=" band-label">
-                    <label class="member-label" for="band-member-one">Band member one:</label>
-                    <input class="input-modal band-input" type="text" name="first-name" placeholder="First name" value="">
-                    <input class="input-modal band-input" type="text" name="last-name" placeholder="Last name" value="">
-                    <input class="input-modal band-input" type="text" name="instrament" placeholder="Instrument" value="">
-                    <input class="input-modal" type="file" name="image" id="image"> 
-                  </div>
-        
-                  <div class=" band-label">
-                    <label  class="member-label"for="band-member-two">Band member two:</label>
-                    <input class="input-modal band-input" type="text" name="first-name" placeholder="First name" value="">
-                    <input class="input-modal band-input" type="text" name="last-name" placeholder="Last name" value="">
-                    <input class="input-modal band-input" type="text" name="instrament" placeholder="Instrument" value="">
-                    <input class="input-modal" type="file" name="image" id="image"> 
-                  </div>
+                  <textarea name="band" id="band" rows="10" cols="80"></textarea>
 
-                  <div class=" band-label">
-                    <label  class="member-label"for="band-member-three">Band member three:</label>
-                    <input class="input-modal band-input" type="text" name="first-name" placeholder="First name" value="">
-                    <input class="input-modal band-input" type="text" name="last-name" placeholder="Last name" value="">
-                    <input class="input-modal band-input" type="text" name="instrament" placeholder="Instrument" value="">
-                    <input class="input-modal" type="file" name="image" id="image"> 
-                  </div>
-
-                  <div class=" band-label">
-                    <label class="member-label" for="band-member-four">Band member four:</label>
-                    <input class="input-modal band-input" type="text" name="first-name" placeholder="First name" value="">
-                    <input class="input-modal band-input" type="text" name="last-name" placeholder="Last name" value="">
-                    <input class="input-modal band-input" type="text" name="instrament" placeholder="Instrument" value="">
-                    <input class="input-modal" type="file" name="image" id="image"> 
-                  </div>
-              
                   <input class="button submit-log-in" type="submit" name="changes" value="Create">
                 </form>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="upload-photo">
       <h1>Upload a photo</h1>
-        <form>
+        <form action="" method="post">
           <div class="form-group">
             <label for="name">Name:</label>
             <input class="input-modal band-input" type="text">
@@ -147,6 +116,29 @@ $this->layout('master', [
             <label for="images"></label>
             <input class="band-input" type="file" name="image" id="image">
           </div>
+
+          <input class="button submit-images" type="submit" name="images" value="upload">
+        </form>
+      </div>
+
+        <div role="tabpanel" class="tab-pane" id="post-article">
+          <form action="" method="post">
+            <label for="title-one">Title part one:</label>
+            <input class="article-info" type="text">
+
+            <label for="title-two">Title part two:</label>
+            <input class="article-info" type="text">
+
+            <label for="author">Writen by:</label>
+            <input class="article-info" type="text">
+
+            <label for="description">Description:</label>
+            <textarea name="description"></textarea>
+
+            <textarea name="article" id="article" rows="10" cols="80"></textarea>
+
+            <input class="button submit-article" type="submit" name="article-submit" value="Post">
+
         </form>
       </div>
 
@@ -155,3 +147,14 @@ $this->layout('master', [
   </div>
       
 </div>
+
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'article' );
+            </script>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'band' );
+            </script>

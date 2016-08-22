@@ -8,6 +8,8 @@ class SignInController extends MasterController {
 
 		$this->dbc = $dbc;
 
+		$this->mustBeLoggedOut();
+
 		// die("I am here");
 		// //If the sign in form has been submited
 		if( isset($_POST['sign-in']) ){
@@ -18,7 +20,7 @@ class SignInController extends MasterController {
 
 public function buildHTML() {
 
-		echo $this->plates->render('home', $this->data);
+		echo $this->plates->render('sign-in', $this->data);
 		
 
 	}
@@ -37,10 +39,12 @@ public function buildHTML() {
 
 		if( strlen($_POST['password']) < 8 ) {
 
-			$this->dat['passwordMessage'] = 'Invalid Password';
+			$this->data['passwordMessage'] = 'Invalid Password';
 			$totalErrors++;
 
 		}
+
+
 
 	 	//If there are no errors
 		if( $totalErrors == 0 ){
@@ -52,7 +56,7 @@ public function buildHTML() {
 
 			//Prepare SQL
 
-			$sql = "SELECT password, user_id
+			$sql = "SELECT user_id,password
 					FROM users 
 					WHERE email = '$fillteredEmail' ";
 
@@ -70,19 +74,21 @@ public function buildHTML() {
 
 				//If the result was true
 				if( $passwordResult == true ){
-
 					//Log the user in
-					$_SESSION['id']
+
+					$_SESSION['id'] = $userData['user_id'];
+
+					header('Location: index.php?page=home');
 
 				} else {
 					//prepare error message
-					$this->data['siginInMessage'] = 'Your email or password are inccorect';
+					$this->data['signInMessage'] = 'Your email or password are inccorect';
 				}
 
 			} else {
 
 				//Credentials dont match
-				$this->data['siginInMessage'] = 'Your email or password are inccorect';
+				$this->data['signInMessage'] = 'Your email or password are inccorect';
 
 			}
 
