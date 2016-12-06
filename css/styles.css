@@ -2,16 +2,28 @@ body{
 	padding: 0;
 	margin: 0 ;
 	font-family: 'Raleway', sans-serif;
+	position: relative;
 }
 p {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 }
+
+.footer{
+	width: 100%;
+}
+
 footer {
+	background-color: white;
 	width: 1140px;
 	margin: 0 auto;
 	bottom: 20px;
 	border-top: 1px solid #eee;
+	z-index: 5;
+	/*position: fixed;
+*/}
+
+footer p {
 }
 
 h1 {
@@ -35,6 +47,11 @@ h1 {
 
 .nav-tab {
 	width: 568px;
+}
+
+#hr {
+	margin: 10px 0;
+	width: 100%;
 }
 /*===========nav==========*/
 .navbar-brand {
@@ -191,6 +208,7 @@ h1 {
 	border: none;
 }
 
+
 .lead {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
@@ -202,6 +220,7 @@ h1 {
 	width: 100%;
 	height: 500px;
 	margin-bottom: 60px;
+
 }
 .gallery {
 	margin-bottom: 60px;
@@ -245,6 +264,9 @@ h1 {
 	
 	color: #333;
 
+}
+.featurette-image {
+	width: 500px;
 }
 
 /*============Calender==========*/
@@ -468,7 +490,7 @@ article {
 .account {
 	width: 1140px;
 	margin: 100px auto;
-	height: 693px;
+	height: 750px;
 }
 
 .pills {

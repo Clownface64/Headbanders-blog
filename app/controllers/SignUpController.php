@@ -93,7 +93,7 @@ class SignUpController extends MasterController {
 		$filteredEmail = $this->dbc->real_escape_string($_POST['email']);
 
 		$sql = "SELECT email 
-					FROM users
+					FROM user
 					WHERE email ='$filteredEmail'";
 
 		//run the query
@@ -126,7 +126,7 @@ class SignUpController extends MasterController {
 			$hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 			//Prepare the sql
-			$sql = "INSERT INTO users (first_name, last_name, email, password)
+			$sql = "INSERT INTO user (first_name, last_name, email, password)
 					VALUES ('$filteredFirstName', '$filteredLastName', '$filteredEmail', '$hash')";
 
 			$this->dbc->query($sql);

@@ -56,8 +56,8 @@ public function buildHTML() {
 
 			//Prepare SQL
 
-			$sql = "SELECT user_id,password
-					FROM users 
+			$sql = "SELECT user_id, password
+					FROM user 
 					WHERE email = '$fillteredEmail' ";
 
 			//Run the query

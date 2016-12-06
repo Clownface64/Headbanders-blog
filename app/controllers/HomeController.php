@@ -29,8 +29,8 @@ class HomeController extends MasterController{
 	private function getLatestPosts() {
 
 		//Prepare some sql
-		$sql = "SELECT title_one, title_two, description, written_by, upload_date, updated_date
-				FROM articles";
+		$sql = "SELECT article_id, title_one, description, written_by, upload_date, updated_date, image
+				FROM article";
 
 		//Run the sql and capture the results
 		$result = $this->dbc->query($sql);
@@ -40,6 +40,8 @@ class HomeController extends MasterController{
 
 		//Return the result to the code that called this function
 		return $allData;
+
+		// echo $allData;
 	}
 
 	

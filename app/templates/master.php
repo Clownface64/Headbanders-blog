@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><?= $title?> </title>
+    <title><?=$title?> </title>
     <meta name="description" content="<?=$desc?>">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@
   </head>
   <body>
 
-  <?php if(isset($_SESSION['id'])){
+  <!-- <?php if(isset($_SESSION['id'])){
     var_dump("you are Logged in as ".$_SESSION['id']);
     } else{
       var_dump("you are logged Out");
     } 
-  ?>
+  ?> -->
     
     <div class="navbar-wrapper">
       <div class="container">
@@ -46,7 +46,6 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul id="nav-ul" class="nav navbar-nav">
                 <li class=""><a href="index.php?page=home">Home</a></li>
-                <li class=""><a href="index.php?page=gallery">Gallery</a></li>
                 <li class=""><a href="index.php?page=event">Events</a></li>
                 <li class=""><a href="index.php?page=contact">Contact</a></li>
               </ul>
@@ -65,7 +64,8 @@
                 <a href="#" class="dropdown-toggle " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="index.php?page=sign-in">Sign in</a></li>                                
+                  <li><a href="index.php?page=sign-in">Sign in</a></li> 
+                  <li><a href="index.php?page=sign-up">Sign up</a></li>                                
                   <li><a href="index.php?page=account">Account</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="index.php?page=sign-out">Sign out</a></li>                
@@ -80,12 +80,13 @@
     <?php echo $this->section('content') ?> 
 
           <!-- FOOTER -->
+
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-right clearfix"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
-    </div>
+   
        
       
 

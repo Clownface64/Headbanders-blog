@@ -8,7 +8,7 @@ $this->layout('master', [
 <div class="sign-up"> 
   <h1>Sign up:</h1>
 
-  <form id="sign-up" role="form" action="" method="post">
+  <form id="sign-up" role="form" action="" method="POST">
     <div class="form-group">
       <label for="first-name">First Name:</label>
       <input class="input-sign-up" type="text" name="first-name" value="<?= isset($_POST['first-name']) ? $_POST['first-name'] : '' ?>">            

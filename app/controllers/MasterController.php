@@ -36,8 +36,5 @@ abstract class MasterController {
 		}
 	}
 
-	protected function mostViewdPosts() {
-		
-	}
-
+	
 }

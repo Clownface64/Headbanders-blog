@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.inc.php';
+
 session_start();
 
 //Make everything in the vendor folder avalavle to use
@@ -12,7 +14,7 @@ require 'app/controllers/MasterController.php';
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 //Database connection
-$dbc = new mysqli('localhost', 'root', '', 'headbangers_blog');
+$dbc = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 // Load the appropriate files based on page
 switch($page) {
@@ -44,16 +46,16 @@ switch($page) {
 
 	//Event page
 	case 'event':
-		echo $plates->render('event');
+		// echo $plates->render('event');
 		require 'app/controllers/EventController.php';
 		$controller = new EventController($dbc);
 	break;
 
 	//Contact page
 	case 'contact':
-		echo $plates->render('contact');
-		// require 'app/controllers/ContactController.php';
-		// $controller = new ContactController($dbc);
+		// echo $plates->render('contact');
+		require 'app/controllers/ContactController.php';
+		$controller = new ContactController($dbc);
 	break;
 
 	//Sign up page
