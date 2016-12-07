@@ -81,7 +81,7 @@ $this->layout('master', [
 
       <div class="row featurette">
         <div class="col-md-7 <?= $toggler ? 'col-md-push-5' : '' ?>">
-          <a class="article-anchor" href="index.php?page=article&articleid=<?=$item['']?>">
+          <a class="article-anchor" href="index.php?page=article&articleid=<?=$item['article_id']?>">
             <h2 class="featurette-heading"><?= $item['title_one'] ?> 
             </h2>
           </a>

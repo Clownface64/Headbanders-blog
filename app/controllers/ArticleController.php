@@ -13,7 +13,7 @@ class ArticleController extends MasterController {
 		$this->getArticleData();
 
 		if( isset( $_POST['new-comment'] ) ) {
-			$this->processNewComment
+			$this->processNewComment();
 		}
 	}
 
@@ -42,6 +42,24 @@ class ArticleController extends MasterController {
 		} else {
 			$this->data['article'] = $result->fetch_assoc();
 		}
+
+
+		$sql = "SELECT comment_id, comment, date_posted, user.user_id, first_name, last_name
+				FROM comments
+				JOIN user
+				ON comments.user_id = user.user_id
+				WHERE article_id = $articleID";
+				
+
+		//run the sql
+		$result = $this->dbc->query($sql);
+
+		if( !$result ) {
+			header('location: index.php?page=404');
+		} else {
+			$this->data['allComments'] = $result->fetch_all(MYSQLI_ASSOC);
+		}
+
 	}
 
 	private function processNewComment(){

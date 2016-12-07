@@ -18,12 +18,14 @@ $this->layout('master', [
       <h6 class="byline">Writen by:<?= $this->e($article['written_by']) ?></h6>
       <h6 class="byline">Uploaded on: <?= $this->e($article['upload_date']) ?></h6>
       
+
       
       <hr id="hr">
      
       <p class="article-body">
         <?= $this->e($article['article']) ?>
       </p>
+      <a href="index.php?page=editArticle&articleid<?=$_GET['article_id']?>"><h2>EDIT</h2></a>
     </article>
     <hr>
     <div>
@@ -33,7 +35,7 @@ $this->layout('master', [
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12"> 
          
-                <form class="form-group" action="index.php?page=article&article_id=<?= $_GET['recipe_id'] ?>" method="post">
+                <form class="form-group" action="index.php?page=article&articleid=<?= $_GET['article_id'] ?>" method="post">
             
               <h2>Comments: (<?= count($allComments) ?>)</h2>
               
@@ -51,13 +53,13 @@ $this->layout('master', [
                 <?= isset($articleCommentMessage) ? $articleCommentMessage : '' ?>
             </form>
 
-
+            <?php if(is_array($allComments)): ?>
           <?php foreach($allComments as $comment): ?>
 
             <article id="edit-dot">
                 <h2>Posted Comments</h2> 
                 <p><?= ($comment['comment']) ?> </p>
-                <small>Written by: <?= htmlentities($comment['author']) ?></small>
+                <small>Written by: <?= htmlentities($comment['first_name']) ?> <?= htmlentities($comment['last_name']) ?></small>
 
                 <?php
                 // Is the visitor logged in?
@@ -67,14 +69,14 @@ $this->layout('master', [
                   
                   ?>
                     <li>
-                      <a href="index.php?page=edit-comments&commentid=<?=$comment['id']?>"><button class="btn btn-success post-button btn-xs">Edit</button></a>
+                      <a href="index.php?page=edit-comments&commentid=<?=$comment['comment_id']?>"><button class="btn btn-success post-button btn-xs">Edit</button></a>
                     </li>
                       
                     <li>
                       <a><button class="delete-post btn btn-success post-button btn-xs">Delete</button></a>
                       
                         <div class="delete-post-options">
-                          <a href= "<?= $_SERVER['REQUEST_URI'] ?>&deleteComment&commentid=<?=$comment['id']?>">Yes</a> / <button>No</button>
+                          <a href= "<?= $_SERVER['REQUEST_URI'] ?>&deleteComment&commentid=<?=$comment['comment_id']?>">Yes</a> / <button>No</button>
                         </div>
 
                     </li>
@@ -86,6 +88,7 @@ $this->layout('master', [
             </article>
                 
                 <?php endforeach ?>
+              <?php endif; ?>
             </div>
         </div> 
     </div>

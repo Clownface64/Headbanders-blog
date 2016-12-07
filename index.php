@@ -44,6 +44,12 @@ switch($page) {
 		$controller = new ArticleController($dbc);
 	break;
 
+	//Article page
+	case 'editArticle':
+		require 'app/controllers/EditArticleController.php';
+		$controller = new EditArticleController($dbc);
+	break;
+
 	//Event page
 	case 'event':
 		// echo $plates->render('event');
